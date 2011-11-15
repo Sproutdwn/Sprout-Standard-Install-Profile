@@ -31,7 +31,6 @@ api = 2
 ; projects[drupal][version] = 7
 
   
-  
 ; Modules
 ; --------
 projects[admin][type] = "module"
@@ -56,10 +55,6 @@ projects[views][type] = "module"
 projects[webform][type] = "module"
 
 
-
-
-
-
 ; Themes
 ; --------
 projects[omega][type] = "theme"
@@ -67,14 +62,11 @@ projects[rubik][type] = "theme"
 projects[tao][type] = "theme"
 
   
-  
 ; Libraries
 ; ---------
-libraries[colorbox][type] = "libraries"
 libraries[colorbox][download][type] = "file"
 libraries[colorbox][download][url] = "http://jacklmoore.com/colorbox/colorbox.zip"
 
-libraries[jquery.cycle][type] = "libraries"
 libraries[jquery.cycle][download][type] = "file"
 libraries[jquery.cycle][download][url] = "http://www.malsup.com/jquery/cycle/release/jquery.cycle.zip"
 
