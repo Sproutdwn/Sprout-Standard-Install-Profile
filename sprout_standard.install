@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function sprout_standard_install() {
+
+  include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+  standard_install();
+  
+  module_enable(array(
+  	'admin_menu_toolbar',
+	'ds_extras',
+	'views_ui'
+  ), $enable_dependencies = TRUE);
+  
+  module_disable(array(
+  	'toolbar'
+  ), $disable_dependents = TRUE);
+  
+  // Add text formats.
+  $markdown_format = array(
+    'format' => 'markdown',
+    'name' => 'Markdown',
+    'weight' => 0,
+    'filters' => array(
+      // Markdown filter.
+      'filter_markdown' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+    ),
+  );
+  $markdown_format = (object) $markdown_format;
+  filter_format_save($markdown_format);
+ 
+  //grant permission for text format markdown to admin
+  db_insert('role_permission')->fields(array(
+    'rid' => 3,
+    'permission' => 'use text format markdown',
+    'module' => 'filter'
+  ))->execute();
+  
+  //grant permission for text format markdown to authenticated user
+  db_insert('role_permission')->fields(array(
+    'rid' => 2,
+    'permission' => 'use text format markdown',
+    'module' => 'filter'
+  ))->execute();
+  
+  //add pathauto url alias pattern for basic page ([node:title])
+  db_insert('variable')->fields(array(
+  	'name' => 'pathauto_node_page_pattern', 
+   	'value' => 's:12:"[node:title]";'
+  ))->execute();
+
+  // Disable some standard blocks.
+  db_update('block')->fields(array(
+    'status' => 0,
+    'region' => -1,
+  ))
+  ->condition(db_or()->condition(db_and()->condition('module', 'search')->condition('delta', 'form'))
+  					 ->condition(db_and()->condition('module', 'node')->condition('delta', 'recent'))
+  					 ->condition(db_and()->condition('module', 'user')->condition('delta', 'login'))
+  					 ->condition(db_and()->condition('module', 'system')->condition('delta', 'navigation'))
+  					 ->condition(db_and()->condition('module', 'system')->condition('delta', 'powered-by'))
+  			 )->execute();
+  	
+
+  //Create "Webdesign by Sprout" link in own Menu.
+  $menu = array(
+	'menu_name' => 'sprout', 
+	'title' => st('Web Design by Sprout'),
+	'description' => st('Link to sprout.com.au')
+  );
+  menu_save($menu);
+  	
+  $item = array(
+    'link_title' => st('Web Design by Sprout'),
+    'link_path' => 'http://sprout.com.au',
+    'menu_name' => 'sprout',
+    'description' => st('automatically created link to sprout.com.au')
+  );
+  menu_link_save($item);
+  menu_rebuild(); // Update the menu router information.
+
+	// set several other variables
+	variable_set('user_pictures', '0');	// disable user pictures by default
+	variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY); // users to be registered by admins only
+	variable_set('menu_secondary_links_source', 'main-menu'); // set secondary links source to main menu
+	variable_set('admin_menu_position_fixed', 1); // set admin menu fixed at top of page
+	variable_set('less_devel', TRUE); // turn on LESS developer mode
+
+}

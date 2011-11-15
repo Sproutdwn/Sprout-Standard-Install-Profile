@@ -1,0 +1,45 @@
+name = Sprout Standard
+description = All features that Sprout regularly use for custom sites.
+version = VERSION
+core = 7.x
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = toolbar
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+; additions beyond the standard profile
+dependencies[] = admin
+dependencies[] = admin_tools
+dependencies[] = admin_menu
+dependencies[] = backup_migrate
+dependencies[] = colorbox
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = less
+dependencies[] = libraries
+dependencies[] = markdown
+dependencies[] = omega_tools
+dependencies[] = pathauto
+dependencies[] = search404
+dependencies[] = token
+dependencies[] = views
+
+
+files[] = sprout_standard.profile

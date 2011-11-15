@@ -1,0 +1,76 @@
+Sprout Standard 
+Install Profile for Drupal 7 Custom Websites
+*************************************************
+
+Contents:
+---------
+- Files
+- How to use
+- What this profile does
+- TODO
+
+## Files:
+----------
+- README
+- sprout_standard.info
+- sprout_standard.install
+- sprout_standard.make
+- sprout_standard.profile
+
+not included:
+- sprout_standard_stub.make (to pull Drupal core, patch it and pull this profile)
+
+contents of sprout_standard_stub.make:
+======================================================
+core = 7.x
+api = 2
+
+projects[drupal][version] = 7
+projects[drupal][patch][] = "http://drupal.org/files/issues/install-timezone-detect-1017020-3.patch"
+
+projects[sprout_standard][type] = "profile"
+projects[sprout_standard][download][type] = "git"
+projects[sprout_standard][download][url] = "https://github.com/Sproutdwn/Sprout-Standard-Install-Profile"
+projects[sprout_standard][download][branch] = "master"
+======================================================
+
+
+## How to use:
+---------------
+- put sprout_standard_stub.make onto server in the directory where Drupal is supposed to install
+- using a shell (Terminal) change directory to where sprout_standard_stub.make is (command is: cd)
+- type: drush make sprout_standard_stub.make
+
+
+## What this profile does
+-------------------------
+* download modules, themes & libraries (see sprout_standard.make)
+* enable modules (see sprout_standard.install)
+	- disable toolbar
+	
+* create Markdown text format
+	- grant permissions to Markdown text format
+
+* enable/disable and assign blocks to regions
+	- powered by drupal to none
+	- navigation to none
+	- search to none
+	- login to none
+	- recent content to none
+	
+* disable user pictures & set account creation to admin only
+* create short date formats (12 Feb 2011)
+* set second menu source to main menu
+* create menu "Webdesign by Sprout" with link to sprout.com.au
+* turn LESS dev mode on
+* set automatic url alias pattern for basic page to [node:title]
+
+
+## TODO
+-------------------------
+Add additional step to decide during install:
+* Slideshow Block (provides a separate content type slideshow and makes a slideshow block available - global slideshow)
+* Page Slideshow (ability to show images attached to pages as slideshow - slideshow/image per page)
+* Google Analytics (+ set up Dashboard, make sure there's a privacy policy!)
+* Superfish (+ set up main menu, download library)
+* create standard contact form  (turn webform on an create the standard contact Webform as page under "/contact")
