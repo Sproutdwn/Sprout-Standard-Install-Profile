@@ -13,6 +13,7 @@ function sprout_standard_install() {
   module_enable(array(
   	'admin_menu_toolbar',
 	'ds_extras',
+	'less',
 	'views_ui'
   ), $enable_dependencies = TRUE);
   
@@ -86,7 +87,7 @@ function sprout_standard_install() {
     'link_title' => st('Web Design by Sprout'),
     'link_path' => 'http://sprout.com.au',
     'menu_name' => 'sprout',
-    'description' => st('automatically created link to sprout.com.au')
+    'description' => st('Link to sprout.com.au created by Install Profile')
   );
   menu_link_save($item);
   menu_rebuild(); // Update the menu router information.
