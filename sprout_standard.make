@@ -70,3 +70,6 @@ libraries[colorbox][download][url] = "http://jacklmoore.com/colorbox/colorbox.zi
 libraries[jquery.cycle][download][type] = "file"
 libraries[jquery.cycle][download][url] = "http://www.malsup.com/jquery/cycle/release/jquery.cycle.zip"
 
+libraries[lessphp][download][type] = "git"
+libraries[lessphp][download][url] = "https://github.com/leafo/lessphp/zipball/master"
+
