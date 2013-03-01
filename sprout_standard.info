@@ -40,5 +40,33 @@ dependencies[] = search404
 dependencies[] = token
 dependencies[] = views
 
+; Variables
+; ----------
+variables[admin_menu_position_fixed] = 1
+variables[admin_theme] = 'seven'
+variables[configurable_timezones] = 1
+variables[date_default_timezone] = 'Australia/Darwin'
+variables[date_first_day] = '1'
+variables[filter_fallback_format] = 'plain_text'
+variables[menu_secondary_links_source] = 'main-menu'
+variables[node_admin_theme] = '1'
+variables[node_options_page][0] = 'status'
+variables[pathauto_blog_pattern] = 'blogs/[user:name]'
+variables[pathauto_forum_pattern] = '[term:vocabulary]/[term:name]'
+variables[pathauto_node_page_pattern] = '[node:title]'
+variables[pathauto_node_pattern] = '[node:content-type:name]/[node:title]'
+variables[pathauto_punctuation_hyphen] = 1
+variables[pathauto_taxonomy_term_pattern] = '[term:vocabulary]/[term:name]'
+variables[pathauto_user_pattern] = 'users/[user:name]'
+variables[path_alias_whitelist][user] = true
+variables[search404_page_title] = 'Page not found'
+variables[site_404] = 'search404'
+variables[theme_default] = 'bartik'
+variables[user_default_timezone] = '0'
+variables[user_pictures] = '0'
+variables[user_picture_dimensions] = '1024x1024'
+variables[user_picture_file_size] = '800'
+variables[user_picture_style] = 'thumbnail'
+
 
 files[] = sprout_standard.profile

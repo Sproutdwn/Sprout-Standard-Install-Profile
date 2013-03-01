@@ -71,3 +71,13 @@ function sprout_standard_date_format_types() {
     'sprout_standard_12_hour_long' => t('Sprout 12 hour long'),
   );
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function system_form_install_select_profile_form_alter(&$form, $form_state) {
+  // select pb_test install profile by default
+  foreach ($form['profile'] as $key => $element) {
+    $form['profile'][$key]['#value'] = 'sprout_standard';
+  }
+}

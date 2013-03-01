@@ -55,13 +55,19 @@ projects[webform][type] = "module"
 projects[omega][type] = "theme"
 projects[rubik][type] = "theme"
 projects[tao][type] = "theme"
+projects[profiler][type] = "theme"
 
   
 ; Libraries
 ; ---------
-libraries[colorbox][download][type] = "file"
-libraries[colorbox][download][url] = "http://jacklmoore.com/colorbox/colorbox.zip"
+libraries[colorbox][directory_name] = "colorbox"
+libraries[colorbox][type] = "library"
+libraries[colorbox][destination] = "libraries"
+libraries[colorbox][download][type] = "get"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/master.zip"
 
-libraries[jquery.cycle][download][type] = "file"
+libraries[jquery.cycle][directory_name] = "jquery.cycle"
+libraries[jquery.cycle][type] = "library"
+libraries[jquery.cycle][destination] = "libraries"
+libraries[jquery.cycle][download][type] = "get"
 libraries[jquery.cycle][download][url] = "http://www.malsup.com/jquery/cycle/release/jquery.cycle.zip"
-

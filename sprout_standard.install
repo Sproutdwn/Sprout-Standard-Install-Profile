@@ -1,5 +1,7 @@
 <?php
-
+!function_exists('profiler_v2') ? require_once('libraries/profiler/profiler.inc') : FALSE;
+  profiler_v2('pb_test');
+  
 /**
  * Implements hook_install().
  *
@@ -56,10 +58,12 @@ function sprout_standard_install() {
   ))->execute();
   
   //add pathauto url alias pattern for basic page ([node:title])
+/*
   db_insert('variable')->fields(array(
   	'name' => 'pathauto_node_page_pattern', 
    	'value' => 's:12:"[node:title]";'
   ))->execute();
+*/
 
   // Disable some standard blocks.
   db_update('block')->fields(array(
@@ -92,9 +96,11 @@ function sprout_standard_install() {
   menu_rebuild(); // Update the menu router information.
 
 	// set several other variables
+/*
 	variable_set('user_pictures', '0');	// disable user pictures by default
 	variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY); // users to be registered by admins only
 	variable_set('menu_secondary_links_source', 'main-menu'); // set secondary links source to main menu
 	variable_set('admin_menu_position_fixed', 1); // set admin menu fixed at top of page
+*/
 
 }
