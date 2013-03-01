@@ -1,21 +1,17 @@
 ; ----------------
-; Generated makefile from http://drushmake.me
+; Generated makefile originally from http://drushmake.me
 ; Permanent URL: http://drushmake.me/file.php?token=3962d7912530
 ; ----------------
-;
-; This is a working makefile - try it! Any line starting with a `;` is a comment.
-  
+
 ; Core version
 ; ------------
-; Each makefile should begin by declaring the core version of Drupal that all
-; projects should be compatible with.
+; Each makefile should begin by declaring the core version of Drupal that all projects should be compatible with.
   
 core = 7.x
   
 ; API version
 ; ------------
-; Every makefile needs to declare its Drush Make API version. This version of
-; drush make uses API version `2`.
+; Every makefile needs to declare its Drush Make API version. This version of drush make uses API version `2`.
   
 api = 2
   
@@ -43,7 +39,6 @@ projects[devel][type] = "module"
 projects[ds][type] = "module"
 projects[features][type] = "module"
 projects[globalredirect][type] = "module"
-projects[less][type] = "module"
 projects[libraries][type] = "module"
 projects[markdown][type] = "module"
 projects[menu_block][type] = "module"
@@ -69,7 +64,4 @@ libraries[colorbox][download][url] = "http://jacklmoore.com/colorbox/colorbox.zi
 
 libraries[jquery.cycle][download][type] = "file"
 libraries[jquery.cycle][download][url] = "http://www.malsup.com/jquery/cycle/release/jquery.cycle.zip"
-
-libraries[lessphp][download][type] = "git"
-libraries[lessphp][download][url] = "https://github.com/leafo/lessphp/zipball/master"
 

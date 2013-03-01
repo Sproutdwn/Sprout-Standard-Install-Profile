@@ -13,7 +13,6 @@ function sprout_standard_install() {
   module_enable(array(
   	'admin_menu_toolbar',
 	'ds_extras',
-	'less',
 	'views_ui'
   ), $enable_dependencies = TRUE);
   
@@ -25,7 +24,7 @@ function sprout_standard_install() {
   $markdown_format = array(
     'format' => 'markdown',
     'name' => 'Markdown',
-    'weight' => 0,
+    'weight' => -1,
     'filters' => array(
       // Markdown filter.
       'filter_markdown' => array(
@@ -97,6 +96,5 @@ function sprout_standard_install() {
 	variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY); // users to be registered by admins only
 	variable_set('menu_secondary_links_source', 'main-menu'); // set secondary links source to main menu
 	variable_set('admin_menu_position_fixed', 1); // set admin menu fixed at top of page
-	variable_set('less_devel', TRUE); // turn on LESS developer mode
 
 }
