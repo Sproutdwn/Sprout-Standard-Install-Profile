@@ -55,7 +55,6 @@ projects[webform][type] = "module"
 projects[omega][type] = "theme"
 projects[rubik][type] = "theme"
 projects[tao][type] = "theme"
-projects[profiler][type] = "theme"
 
   
 ; Libraries
