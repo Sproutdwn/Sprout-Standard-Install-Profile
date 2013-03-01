@@ -48,9 +48,11 @@ projects[pathauto][type] = "module"
 projects[prepro][type] = "module"
 projects[sassy][type] = "module"
 projects[search404][type] = "module"
+projects[spamspan][type] = "module"
 projects[token][type] = "module"
 projects[views][type] = "module"
 projects[webform][type] = "module"
+projects[webform_validation][type] = "module"
 
 
 ; Themes

@@ -36,6 +36,12 @@ function sprout_standard_install() {
         'weight' => 1,
         'status' => 1,
       ),
+      // SpamSpan filter.
+      'filter_spamspan' => array(
+        'weight' => 2,
+        'status' => 1,
+        'settings' => array( 'spamspan_use_graphic' => 0 ),
+      ),
     ),
   );
   $markdown_format = (object) $markdown_format;
@@ -94,7 +100,4 @@ function sprout_standard_install() {
 	variable_set('user_pictures', '0');	// disable user pictures by default
 	variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY); // users to be registered by admins only
 	variable_set('menu_secondary_links_source', 'main-menu'); // set secondary links source to main menu
-	
-	variable_set('[prepro][show_warnings]', 0);
-
 }

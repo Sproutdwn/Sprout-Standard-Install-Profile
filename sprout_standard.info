@@ -32,7 +32,6 @@ dependencies[] = backup_migrate
 dependencies[] = colorbox
 dependencies[] = ctools
 dependencies[] = ds
-dependencies[] = googleanalytics
 dependencies[] = libraries
 dependencies[] = markdown
 dependencies[] = omega_tools
@@ -42,6 +41,7 @@ dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = sassy_foundation
 dependencies[] = search404
+dependencies[] = spamspan
 dependencies[] = token
 dependencies[] = views
 
