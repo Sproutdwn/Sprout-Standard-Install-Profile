@@ -26,7 +26,6 @@ core = 7.x
 api = 2
 
 projects[drupal][version] = 7
-projects[drupal][patch][] = "http://drupal.org/files/issues/install-timezone-detect-1017020-3.patch"
 
 projects[sprout_standard][type] = "profile"
 projects[sprout_standard][download][type] = "git"

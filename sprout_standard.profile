@@ -12,11 +12,13 @@ function sprout_standard_form_install_configure_form_alter(&$form, $form_state) 
   $form['server_settings']['site_default_country']['#default_value'] = 'AU';
   $form['server_settings']['date_default_timezone']['#default_value'] = 'Australia/Darwin';
   
+/*
   // make sure the automatic detection doesn't run after we set the timezone Ð works only with patch
   $key = array_search('misc/timezone.js', $form['server_settings']['date_default_timezone']['#attached']['js']);
   if ($key !== FALSE) {
     unset($form['server_settings']['date_default_timezone']['#attached']['js'][$key]);
   }
+*/
 }
 
 /**
