@@ -44,6 +44,14 @@ dependencies[] = search404
 dependencies[] = spamspan
 dependencies[] = token
 dependencies[] = views
+dependencies[] = webform
 
 
 files[] = sprout_standard.profile
+
+
+; Information added by drush on 2013-03-01
+version = "master-dev"
+project = "sprout_standard"
+datestamp = "1362121305"
+

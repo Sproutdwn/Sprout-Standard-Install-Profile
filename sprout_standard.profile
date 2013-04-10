@@ -52,11 +52,64 @@ function sprout_standard_date_format_types() {
 }
 
 /**
- * Implements hook_form_alter().
+ * Implements hook_form_ID_alter().
  */
 function system_form_install_select_profile_form_alter(&$form, $form_state) {
-  // select pb_test install profile by default
+  // select sprout standard install profile by default
   foreach ($form['profile'] as $key => $element) {
     $form['profile'][$key]['#value'] = 'sprout_standard';
-  }
+  }  
 }
+
+/**
+ * Implements hook_form_ID_alter().
+ */
+/*
+function system_form_install_configure_form_alter(&$form, $form_state) { 
+    // hide server settings (timezone)
+    unset($form['server_settings']);
+}
+*/
+
+
+
+/**
+ * Implements hook_install_tasks().
+ */
+function sprout_standard_install_tasks($install_state) {
+  $task['sprout_standard_create_content'] = array(
+    'display_name' => st('Pre-install content'),
+    'display' => TRUE,
+    'type' => 'normal',
+    'run' => INSTALL_TASK_RUN_IF_REACHED,
+    //'function' => 'sprout_standard_create_content',
+  );
+  
+  return $task;
+}
+
+/**
+ * 
+ */
+function sprout_standard_create_content() {  
+  $path = drupal_get_path('profile', 'sprout_standard') . '/content';
+  $mask = '/.inc/';
+  $files = file_scan_directory($path, $mask);
+  
+  foreach ($files as $file) {
+    ob_start();
+    include $path.'/'.$file->filename;
+    ob_end_clean();
+
+    $node = (object) $node;
+    $node->language = LANGUAGE_NONE;
+    node_object_prepare($node);
+    node_save($node);
+  }
+
+}
+
+
+
+
+

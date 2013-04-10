@@ -40,7 +40,7 @@ function sprout_standard_install() {
       'filter_spamspan' => array(
         'weight' => 2,
         'status' => 1,
-        'settings' => array( 'spamspan_use_graphic' => 0 ),
+        //'settings' => array( 'spamspan_use_graphic' => 0 ),
       ),
     ),
   );
