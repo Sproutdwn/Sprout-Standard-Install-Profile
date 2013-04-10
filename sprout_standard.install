@@ -12,8 +12,8 @@ function sprout_standard_install() {
   
   module_enable(array(
   	'admin_menu_toolbar',
-	'ds_extras',
-	'views_ui'
+  	'ds_extras',
+  	'views_ui'
   ), $enable_dependencies = TRUE);
   
   module_disable(array(

@@ -103,7 +103,7 @@ function sprout_standard_create_content() {
 
     $node = (object) $node;
     $node->language = LANGUAGE_NONE;
-    node_object_prepare($node);
+    node_object_prepare($node);  // set some default values
     node_save($node);
   }
 
