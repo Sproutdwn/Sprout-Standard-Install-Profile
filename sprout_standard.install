@@ -93,7 +93,6 @@ function sprout_standard_install() {
 
 	// set several other variables
 	variable_set('admin_menu_position_fixed', 1); // set admin menu fixed at top of page
-	variable_set('date_default_timezone', 'Australia/Darwin'); // set Timezone
 	variable_set('date_first_day', '1');  // set first day of the week to Monday
 	variable_set('pathauto_node_pattern', '[node:content-type:name]/[node:title]');  // default alias pattern
 	variable_set('pathauto_node_page_pattern', '[node:title]');  // alias pattern for 'basic page' ct

@@ -63,13 +63,19 @@ function system_form_install_select_profile_form_alter(&$form, $form_state) {
 
 /**
  * Implements hook_form_ID_alter().
+ *
+ * prepopulate with a few defaults that make sense for me
  */
-/*
 function system_form_install_configure_form_alter(&$form, $form_state) { 
-    // hide server settings (timezone)
-    unset($form['server_settings']);
+    $form['site_information']['site_mail']['#default_value'] = 'tina@sprout.com.au';
+    
+    $form['admin_account']['account']['name']['#default_value'] = 'admin';
+    $form['admin_account']['account']['mail']['#default_value'] = 'tina@sprout.com.au';
+    
+    $form['server_settings']['site_default_country']['#default_value'] = 'AU';
+    $form['server_settings']['date_default_timezone']['#default_value'] = 'Australia/Darwin';
+    unset($form['server_settings']['date_default_timezone']['#attributes']); // don't run auto detection
 }
-*/
 
 
 
